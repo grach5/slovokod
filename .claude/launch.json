@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8935", "--directory", "site"],
       "port": 8935
+    },
+    {
+      "name": "school-site-new",
+      "runtimeExecutable": "C:\\Users\\gra4i\\OneDrive\\Рабочий стол\\school\\site-new\\start-dev.cmd",
+      "runtimeArgs": [],
+      "port": 3010
     }
   ]
 }
