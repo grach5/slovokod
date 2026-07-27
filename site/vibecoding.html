@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Профессиональный вайбкодинг — Академия ИИ</title>
+<meta name="description" content="Понятное руководство по профессиональному вайбкодингу: планирование, проверка результата, отладка без хождения по кругу, безопасность при работе с несколькими ИИ-агентами.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Профессиональный вайбкодинг — Академия ИИ">
+<meta property="og:description" content="Понятное руководство по профессиональному вайбкодингу: планирование, проверка результата, отладка без хождения по кругу, безопасность при работе с несколькими ИИ-агентами.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#faf8f4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d9a441'/%3E%3Cpath d='M8 20l8-5 8 5' stroke='%2314161c' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 14l8-5 8 5' stroke='%2314161c' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+/* Академия ИИ — премиальный светлый стиль: белый/кремовый + чёрный + тёплое золото */
+
+:root {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --surface-alt: #f1ede4;
+  --ink: #14161c;
+  --ink-soft: #5c6270;
+  --border: #e5e1d8;
+  --border-strong: #d0cabb;
+
+  --accent: #b3801f;
+  --accent-ink: #ffffff;
+  --good: #2f7d52;
+  --danger: #b8483c;
+
+  --font-display: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "Cascadia Code", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --radius-lg: 12px;
+  --radius: 8px;
+  --radius-sm: 4px;
+  --container: 1140px;
+  --shadow: 0 1px 2px rgba(20,22,28,.06), 0 12px 28px -18px rgba(20,22,28,.18);
+  --shadow-lg: 0 2px 4px rgba(20,22,28,.07), 0 24px 48px -20px rgba(20,22,28,.24);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161c; --surface: #1c1f27; --surface-alt: #22252e; --ink: #eef0f4; --ink-soft: #a3a8b4;
+    --border: #2b2f38; --border-strong: #3a3f4a; --accent: #d9a441; --accent-ink: #14161c;
+    --good: #4caf7d; --danger: #e0645a;
+    --shadow: 0 1px 2px rgba(0,0,0,.2), 0 12px 28px -18px rgba(0,0,0,.45);
+    --shadow-lg: 0 2px 4px rgba(0,0,0,.25), 0 24px 48px -20px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="light"] {
+  --bg: #faf8f4; --surface: #ffffff; --surface-alt: #f1ede4; --ink: #14161c; --ink-soft: #5c6270;
+  --border: #e5e1d8; --border-strong: #d0cabb; --accent: #b3801f; --accent-ink: #ffffff;
+  --good: #2f7d52; --danger: #b8483c;
+  --shadow: 0 1px 2px rgba(20,22,28,.06), 0 12px 28px -18px rgba(20,22,28,.18);
+  --shadow-lg: 0 2px 4px rgba(20,22,28,.07), 0 24px 48px -20px rgba(20,22,28,.24);
+}
+:root[data-theme="dark"] {
+  --bg: #14161c; --surface: #1c1f27; --surface-alt: #22252e; --ink: #eef0f4; --ink-soft: #a3a8b4;
+  --border: #2b2f38; --border-strong: #3a3f4a; --accent: #d9a441; --accent-ink: #14161c;
+  --good: #4caf7d; --danger: #e0645a;
+  --shadow: 0 1px 2px rgba(0,0,0,.2), 0 12px 28px -18px rgba(0,0,0,.45);
+  --shadow-lg: 0 2px 4px rgba(0,0,0,.25), 0 24px 48px -20px rgba(0,0,0,.6);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.68; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; font-weight: 700; text-wrap: balance; }
+p { margin: 0; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(1.25rem, 3vw, 2.5rem); }
+.mono { font-family: var(--font-mono); }
+
+/* ---------- header ---------- */
+header { position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); z-index: 20; }
+.header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; }
+.logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.logo-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); display: flex; align-items: center; justify-content: center; color: var(--accent-ink); flex: 0 0 auto; }
+.logo-mark svg { width: 60%; height: 60%; }
+.logo b { font-family: var(--font-display); font-size: 1.08rem; letter-spacing: 0.01em; }
+nav.primary-nav { display: flex; gap: clamp(1rem, 2vw, 1.75rem); align-items: center; }
+nav.primary-nav a { font-size: 0.88rem; font-weight: 600; text-decoration: none; color: var(--ink-soft); padding-bottom: 3px; border-bottom: 1px solid transparent; transition: color .15s ease, border-color .15s ease; }
+nav.primary-nav a:hover, nav.primary-nav a.is-active { color: var(--ink); border-color: var(--accent); }
+.nav-toggle { display: none; width: 2.3rem; height: 2.3rem; align-items: center; justify-content: center; flex-direction: column; gap: 4px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface); cursor: pointer; }
+.nav-toggle span { display: block; width: 15px; height: 1.5px; background: var(--ink); }
+
+.btn { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; font-size: 0.92rem; text-decoration: none; padding: 0.75rem 1.4rem; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); background: transparent; color: var(--ink); cursor: pointer; transition: background .15s ease, border-color .15s ease, transform .15s ease; }
+.btn:hover { transform: translateY(-1px); border-color: var(--ink-soft); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { filter: brightness(1.08); border-color: var(--accent); }
+
+/* ---------- hero ---------- */
+.hero-section { position: relative; overflow: hidden; }
+.hero-canvas-wrap { position: absolute; inset: 0; z-index: 0; }
+.hero-canvas-wrap canvas { display: block; width: 100%; height: 100%; }
+.hero { padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.5rem, 5vw, 4rem); position: relative; z-index: 1; }
+.hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+.hero-kicker { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.02em; color: var(--accent); margin-bottom: 1.5rem; }
+.hero h1 { font-size: clamp(2.5rem, 3.2vw + 1rem, 3.8rem); line-height: 1.12; }
+.hero h1 em, .page-hero h1 em, h2 em { font-style: italic; color: var(--accent); }
+.lede { max-width: 52ch; font-size: 1.15rem; margin-top: 1.4rem; color: var(--ink-soft); }
+.page-hero .lede { font-size: 1.05rem; }
+.hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 2.25rem; }
+.hero-meta { margin-top: 1.75rem; font-size: 0.88rem; color: var(--ink-soft); }
+.hero-meta b { color: var(--ink); }
+
+/* hero card (mock chat) */
+.hero-card { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-lg); }
+.chat-dots { display: flex; gap: 6px; margin-bottom: 1rem; }
+.chat-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--border-strong); }
+.bubble { border-radius: var(--radius); padding: 0.7rem 1rem; font-size: 0.9rem; margin-bottom: 0.7rem; max-width: 90%; }
+.bubble-user { background: var(--accent); color: var(--accent-ink); margin-left: auto; }
+.bubble-ai { background: var(--surface-alt); border: 1px solid var(--border); color: var(--ink); display: flex; gap: 0.5rem; align-items: flex-start; }
+.bubble-ai .tick { color: var(--good); flex: 0 0 auto; }
+
+/* ---------- sections ---------- */
+.section { padding: clamp(3.25rem, 6vw, 5rem) 0; border-top: 1px solid var(--border); }
+.section:first-of-type { border-top: none; }
+.section-head { margin-bottom: 2.25rem; }
+.section-head h2 { font-size: clamp(1.6rem, 1.1vw + 1.25rem, 2.35rem); }
+.eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.6rem; }
+.section-lede { max-width: 62ch; color: var(--ink-soft); margin-top: 0.6rem; font-size: 1.02rem; }
+.section-top-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; }
+.link-more { font-weight: 700; font-size: 0.9rem; text-decoration: none; color: var(--accent); white-space: nowrap; }
+.link-more:hover { text-decoration: underline; }
+
+/* ---------- proof bar ---------- */
+.proof-bar { display: flex; flex-wrap: wrap; gap: clamp(1.5rem, 4vw, 3rem); padding: 1.5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.proof-item { text-align: left; }
+.proof-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--ink); }
+.proof-label { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.15rem; }
+
+/* ---------- tracks ---------- */
+.tracks-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+@media (max-width: 780px) { .tracks-row { grid-template-columns: 1fr; } }
+.track-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.85rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 0.9rem; }
+.track-eyebrow { font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; }
+.track-card h3 { font-size: 1.3rem; }
+.track-card p { color: var(--ink-soft); }
+.track-stat { font-weight: 700; font-size: 0.88rem; color: var(--accent); margin-top: auto; padding-top: 0.5rem; }
+
+.track-selector { display: inline-flex; flex-wrap: wrap; gap: 3px; padding: 3px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.track-btn { font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.1rem; border: none; border-radius: var(--radius-sm); background: transparent; color: var(--ink-soft); cursor: pointer; transition: background .15s ease, color .15s ease; }
+.track-btn:hover { color: var(--ink); }
+.track-btn.is-active { background: var(--accent); color: var(--accent-ink); }
+
+/* ---------- format spec ---------- */
+.spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.25rem; }
+.spec-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+.spec-card .eyebrow { margin-bottom: 0.5rem; }
+.spec-card p { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* ---------- modules grid ---------- */
+.modules-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+.module-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.85rem; display: flex; flex-direction: column; gap: 0.85rem; box-shadow: var(--shadow); transition: opacity .25s ease, transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.module-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
+.module-card.is-dimmed { opacity: 0.32; }
+.module-num { font-family: var(--font-display); font-size: 1.5rem; color: var(--accent); line-height: 1; }
+.module-card h3 { font-size: 1.15rem; }
+.module-card p.desc { font-size: 0.96rem; color: var(--ink-soft); }
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+.chip { font-size: 0.74rem; font-weight: 600; padding: 0.28rem 0.6rem; border-radius: 999px; background: var(--surface-alt); border: 1px solid var(--border); color: var(--ink-soft); }
+.module-project { font-size: 0.89rem; padding-top: 0.6rem; border-top: 1px solid var(--border); color: var(--ink-soft); }
+.module-project b { color: var(--accent); }
+
+.module-details summary { cursor: pointer; font-size: 0.85rem; font-weight: 700; color: var(--accent); }
+.module-details summary:hover { text-decoration: underline; }
+.module-details ul { margin: 0.65rem 0 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.module-details li { font-size: 0.9rem; color: var(--ink-soft); }
+
+/* ---------- code window ---------- */
+.code-window { background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.code-window-bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--border); }
+.code-window-bar .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border-strong); }
+.code-window-title { margin-left: 0.5rem; font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft); }
+.code-window pre { margin: 0; padding: 1.1rem 1.25rem; overflow-x: auto; font-family: var(--font-mono); font-size: 0.84rem; line-height: 1.65; }
+.code-window code { font-family: inherit; }
+.tok-comment { color: var(--ink-soft); }
+.tok-key { color: #7fb3d5; }
+.tok-str { color: var(--accent); }
+.tok-add { color: var(--good); }
+.tok-del { color: var(--danger); }
+.line-add { background: color-mix(in srgb, var(--good) 14%, transparent); display: block; margin: 0 -1.25rem; padding: 0 1.25rem; }
+.line-del { background: color-mix(in srgb, var(--danger) 14%, transparent); display: block; margin: 0 -1.25rem; padding: 0 1.25rem; }
+
+/* ---------- example / showcase cards ---------- */
+.examples-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 1.5rem; }
+.example-card { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; box-shadow: var(--shadow); }
+.example-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.example-head h3 { font-size: 1.08rem; }
+.example-caption { font-size: 0.92rem; color: var(--ink-soft); }
+.compare { display: grid; grid-template-columns: 1fr; gap: 0.7rem; }
+.compare-row { border-radius: var(--radius-sm); padding: 0.85rem 1rem; background: var(--surface-alt); border: 1px solid var(--border); }
+.compare-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.compare-label.bad { color: var(--danger); }
+.compare-label.good { color: var(--good); }
+.compare-row p { font-size: 0.93rem; }
+
+.showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+@media (max-width: 900px) { .showcase-grid { grid-template-columns: 1fr; } }
+.showcase-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 1rem; }
+.showcase-card h3 { font-size: 1.05rem; }
+.showcase-card p.showcase-caption { color: var(--ink-soft); font-size: 0.9rem; }
+.showcase-mock { background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem; min-height: 150px; display: flex; flex-direction: column; justify-content: center; }
+
+/* ---------- checklist ---------- */
+.rule-list { list-style: none; margin: 0; padding: 0; counter-reset: rule; display: flex; flex-direction: column; gap: 0.9rem; }
+.rule-list li { counter-increment: rule; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: flex; gap: 1.1rem; box-shadow: var(--shadow); }
+.rule-list li::before { content: counter(rule, decimal-leading-zero); font-family: var(--font-mono); font-weight: 700; font-size: 0.85rem; color: var(--accent); flex: 0 0 auto; padding-top: 0.15rem; }
+.rule-body h4 { margin: 0 0 0.35rem; font-family: var(--font-display); font-size: 1.02rem; font-weight: 700; color: var(--ink); }
+.rule-body p { color: var(--ink-soft); font-size: 0.95rem; }
+
+.callout { border: 1px solid var(--danger); border-radius: var(--radius-lg); padding: 1.75rem; background: color-mix(in srgb, var(--danger) 8%, var(--surface)); }
+.callout h3 { font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--danger); }
+.callout p { color: var(--ink-soft); }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.stat-num { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--danger); font-variant-numeric: tabular-nums; }
+.stat-label { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.25rem; }
+
+/* ---------- pricing ---------- */
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
+@media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+.price-card { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem 1.75rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 1rem; }
+.price-card.is-recommended { border: 1px solid var(--accent); box-shadow: var(--shadow-lg); }
+.price-badge { position: absolute; top: -13px; left: 1.75rem; background: var(--accent); color: var(--accent-ink); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.3rem 0.7rem; border-radius: 999px; }
+.price-card h3 { font-size: 1.2rem; }
+.price-card .price-tag { font-family: var(--font-display); font-size: 2rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.price-card .price-note { font-size: 0.82rem; color: var(--ink-soft); }
+.price-features { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+.price-features li { font-size: 0.92rem; display: flex; gap: 0.55rem; align-items: flex-start; }
+.price-features li::before { content: "✓"; color: var(--good); font-weight: 700; flex: 0 0 auto; }
+.pricing-footnote { margin-top: 1.5rem; font-size: 0.85rem; color: var(--ink-soft); text-align: center; }
+.btn-block { width: 100%; justify-content: center; }
+
+/* ---------- order summary ---------- */
+.order-summary { display: none; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; background: color-mix(in srgb, var(--accent) 10%, var(--surface)); border: 1px solid var(--accent); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; margin-bottom: 2.5rem; }
+.order-summary.is-visible { display: flex; }
+.order-summary .order-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 0.3rem; }
+.order-summary .order-plan { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; }
+.order-summary .order-price { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+
+/* ---------- instructor ---------- */
+.instructor-card { display: grid; grid-template-columns: auto 1fr; gap: 1.75rem; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow); }
+@media (max-width: 640px) { .instructor-card { grid-template-columns: 1fr; text-align: center; } }
+.avatar-group { display: flex; flex: 0 0 auto; margin: 0 auto; }
+.avatar-mono { width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--accent-ink); background: var(--accent); border: 3px solid var(--surface); }
+.avatar-mono:not(:first-child) { margin-left: -16px; }
+.avatar-mono.c2 { background: var(--ink-soft); }
+.instructor-card h3 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+.instructor-role { font-size: 0.85rem; color: var(--accent); font-weight: 700; margin-bottom: 0.6rem; }
+.instructor-card p.bio { color: var(--ink-soft); font-size: 0.96rem; }
+
+/* ---------- guarantee ---------- */
+.guarantee-banner { display: flex; align-items: center; gap: 1.5rem; background: var(--surface); border: 1px solid var(--good); border-radius: var(--radius-lg); padding: 1.75rem 2rem; }
+@media (max-width: 640px) { .guarantee-banner { flex-direction: column; text-align: center; } }
+.guarantee-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--good); color: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex: 0 0 auto; }
+.guarantee-banner h3 { font-size: 1.08rem; margin-bottom: 0.3rem; }
+.guarantee-banner p { color: var(--ink-soft); font-size: 0.92rem; }
+
+/* ---------- FAQ ---------- */
+.faq-item { border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
+.faq-item h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.faq-item p { color: var(--ink-soft); }
+
+/* ---------- roadmap ---------- */
+.roadmap-list { list-style: none; margin: 0; padding: 0; counter-reset: step; display: flex; flex-direction: column; gap: 0.9rem; }
+.roadmap-list li { counter-increment: step; display: flex; gap: 1.25rem; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; box-shadow: var(--shadow); }
+.roadmap-list li::before {
+  content: counter(step); font-weight: 700; font-size: 0.95rem; color: var(--accent-ink);
+  background: var(--accent); border-radius: 50%; width: 1.9rem; height: 1.9rem;
+  flex: 0 0 auto; display: flex; align-items: center; justify-content: center;
+}
+
+/* ---------- cta ---------- */
+.cta { margin: 1rem 0 3rem; padding: clamp(2.5rem, 5vw, 3.75rem); border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border-strong); }
+.cta h2 { font-size: clamp(1.75rem, 2vw + 1rem, 2.6rem); max-width: 22ch; }
+.cta p { max-width: 52ch; margin-top: 1rem; color: var(--ink-soft); }
+.cta-actions { margin-top: 2rem; display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+/* ---------- scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+footer { padding: 2.5rem 0 3rem; font-size: 0.88rem; color: var(--ink-soft); border-top: 1px solid var(--border); }
+footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+footer a { text-decoration: underline; text-underline-offset: 2px; color: var(--ink); font-weight: 600; }
+
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; }
+  nav.primary-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 0.5rem clamp(1.25rem, 3vw, 2.5rem) 1rem; background: var(--bg); border-bottom: 1px solid var(--border); }
+  nav.primary-nav.is-open { display: flex; }
+  nav.primary-nav a { padding: 0.85rem 0; border-bottom: 1px solid var(--border); }
+  .header-row .btn { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-row">
+    <a class="logo" href="index.html">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16l6-4 6 4"/><path d="M6 11l6-4 6 4"/></svg></span>
+      <b>Академия ИИ</b>
+    </a>
+    <button class="nav-toggle" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="primary-nav">
+      <a href="index.html">Главная</a>
+      <a href="programma.html">Программа</a>
+      <a href="vibecoding.html" class="is-active">Вайбкодинг</a>
+      <a href="primery.html">Примеры</a>
+      <a href="index.html#pricing">Цены</a>
+      <a href="kontakty.html">Контакты</a>
+    </nav>
+    <a class="btn btn-primary" href="index.html#pricing">Записаться</a>
+  </div>
+</header>
+
+<main>
+  <div class="container page-hero hero">
+    <p class="hero-kicker">Свод правил</p>
+    <h1 style="font-size:clamp(2.2rem,2.6vw + 1rem,3.2rem);">Профессиональный вайбкодинг — <em>не «на вайбах»</em></h1>
+    <p class="lede">
+      К 2026 году вайбкодинг перестал быть «просто описал — получил код»: это чёткая постановка
+      задачи, постоянный контроль человека и понятная граница между «спланировали» и «сделали».
+      Ниже — рабочий чек-лист, включая более сложные темы потока «Инженер»: как проверять качество
+      кода и как обезопасить проект, если над ним работает несколько ИИ-агентов сразу.
+    </p>
+  </div>
+
+  <section class="section reveal" id="planning">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Этап 1 из 4</span><h2>Планирование до кода</h2></div>
+      <p class="section-lede">Прежде чем писать первый запрос к ИИ, стоит чётко описать задачу: что нужно сделать, какие есть ограничения и как понять, что результат готов.</p>
+      <ul class="rule-list">
+        <li><div class="rule-body"><h4>План — в markdown, а не в коде</h4><p>Сформулируйте требования и ограничения текстом до реализации. Итерировать план в разы дешевле, чем итерировать код.</p></div></li>
+        <li><div class="rule-body"><h4>Разделяйте сессии</h4><p>Планирование и реализация — разные разговоры с агентом. Так контекст не теряет актуальность и не смешивает черновики с финальным решением.</p></div></li>
+        <li><div class="rule-body"><h4>Независимое ревью плана</h4><p>Попросите второй агент (или коллегу) посмотреть на план со свежим взглядом — так находятся слепые пятна и логические провалы.</p></div></li>
+        <li><div class="rule-body"><h4>Сверяйтесь с практиками отрасли</h4><p>Отдельным запросом попросите изучить типичные ошибки и подходы именно в вашей предметной области — и внесите находки в план.</p></div></li>
+        <li><div class="rule-body"><h4>Ставьте под сомнение рекомендации</h4><p>Не принимайте архитектурные решения агента на веру — требуйте обоснования и уточняйте, пока не станет понятно «почему именно так».</p></div></li>
+        <li><div class="rule-body"><h4>Не кодите с неясностями</h4><p>Продолжайте уточнять план, пока не согласны с каждой деталью. Недосказанность на этапе плана превращается в баг в готовом продукте.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section reveal" id="implementation">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Этап 2 из 4</span><h2>Дисциплина реализации</h2></div>
+      <ul class="rule-list">
+        <li><div class="rule-body"><h4>Новая сессия на реализацию</h4><p>Начинайте кодить в чистом контексте — без черновиков и промежуточных версий из обсуждения плана.</p></div></li>
+        <li><div class="rule-body"><h4>Код-ревью — до тестирования</h4><p>Обязательный проход код-ревью-агента по каждому изменению перед тем, как вы вручную проверяете результат — не полагайтесь только на память модели.</p></div></li>
+        <li><div class="rule-body"><h4>Проверяйте согласованность слоёв</h4><p>Данные, логика и интерфейс должны остаться согласованы после правки — изменение в одном слое часто «забывают» пробросить в другие.</p></div></li>
+        <li><div class="rule-body"><h4>Явно проговаривайте ошибки</h4><p>Для каждой точки отказа — что происходит и как это обрабатывается. Не «подразумевается», а зафиксировано.</p></div></li>
+        <li><div class="rule-body"><h4>Реальное покрытие тестами</h4><p>Юнит- и интеграционные тесты должны отражать настоящие сценарии использования, а не только счастливый путь.</p></div></li>
+        <li><div class="rule-body"><h4>Умение решить, чего НЕ делать</h4><p>Чем больше ИИ пишет за вас код, тем важнее становится умение вовремя сказать «это лишнее» — а не скорость написания.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section reveal" id="evals">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Этап 3 из 4 · поток «Инженер»</span><h2>Как проверять качество кода, который написал ИИ</h2></div>
+      <p class="section-lede">«Вроде работает» — это не проверка. Профессионалы придумывают конкретные способы
+      убедиться, что код действительно делает то, что нужно, — и делают это регулярно, а не один раз.</p>
+      <ul class="rule-list">
+        <li><div class="rule-body"><h4>Заранее решите, как поймёте, что всё работает</h4><p>Придумайте конкретные проверки и примеры «до», а не оценивайте на глаз после того, как код уже написан.</p></div></li>
+        <li><div class="rule-body"><h4>Ищите не одну ошибку, а причину ошибок</h4><p>Если что-то ломается — разберитесь, какой именно тип задач вызывает проблему, и почему.</p></div></li>
+        <li><div class="rule-body"><h4>Даже если ИИ сам себя проверяет — перепроверяйте</h4><p>Иногда для проверки кода используют ещё один ИИ. Такой проверке тоже нельзя доверять слепо.</p></div></li>
+        <li><div class="rule-body"><h4>Проверки должны запускаться автоматически</h4><p>Каждое изменение кода должно само проходить проверку — а не «когда вспомнили».</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section reveal" id="security">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Этап 4 из 4 · поток «Инженер»</span><h2>Безопасность, когда работает несколько ИИ-агентов сразу</h2></div>
+      <div class="callout">
+        <h3>Отрасль пока не закрыла эти риски полностью</h3>
+        <p>Когда над одной задачей одновременно работают несколько ИИ-агентов, появляются новые
+        способы что-то сломать — и готовых универсальных решений под все из них пока нет. Это не
+        повод для паники, а причина продумывать защиту заранее, а не полагаться на «стандартный набор».</p>
+      </div>
+      <ul class="rule-list" style="margin-top:1.75rem;">
+        <li><div class="rule-body"><h4>Один агент может испортить данные для всех</h4><p>Если несколько агентов пользуются одной общей «памятью» — ошибка или взлом одного может незаметно испортить данные для остальных.</p></div></li>
+        <li><div class="rule-body"><h4>Опасность рождается на стыке инструментов</h4><p>Каждый инструмент по отдельности безобиден, но их сочетание иногда открывает путь к действиям, которые никто не разрешал.</p></div></li>
+        <li><div class="rule-body"><h4>Вредная инструкция может «размножаться»</h4><p>Если агенты слепо доверяют сообщениям друг друга, один заражённый текст может разойтись по всей цепочке, как испорченный телефон.</p></div></li>
+        <li><div class="rule-body"><h4>Автоматическая проверка на уязвимости</h4><p>Каждое изменение кода должно проверяться на типичные уязвимости — автоматически, а не вручную «когда есть время».</p></div></li>
+        <li><div class="rule-body"><h4>Пароли и ключи никогда не хранятся в коде</h4><p>Доступы и ключи держат отдельно от кода; сам ИИ не должен видеть их настоящие значения.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section reveal" id="ai-tool-practice">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Инструмент</span><h2>Практики именно в ИИ-агенте для разработки</h2></div>
+      <div class="examples-grid">
+        <article class="example-card">
+          <div class="example-head"><h3>Короткий файл с правилами проекта, а не энциклопедия</h3><span class="chip">до ~200 строк</span></div>
+          <p class="example-caption">Пишите только то, что верно в каждой сессии — команды, соглашения, зоны «не трогать». Детали — ссылкой, а не вставкой целиком.</p>
+          <div class="code-window">
+            <div class="code-window-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="code-window-title mono">правила.md</span></div>
+            <pre class="mono"><code><span class="tok-comment"># Команды</span>
+Тесты: npm test
+Линт: npm run lint -- --fix
+
+<span class="tok-comment"># Соглашения</span>
+Функциональные компоненты, без default export
+
+<span class="tok-comment"># Не трогать</span>
+/legacy — миграция ещё не завершена</code></pre>
+          </div>
+        </article>
+
+        <article class="example-card">
+          <div class="example-head"><h3>Отдельный ИИ-агент под шумный перебор</h3><span class="chip">делегирование</span></div>
+          <p class="example-caption">Специализированный агент под конкретную задачу точнее выбирает инструменты, чем универсальный «на всё» — и держит основной разговор чистым от промежуточного поиска.</p>
+        </article>
+
+        <article class="example-card">
+          <div class="example-head"><h3>Сначала план, потом правки — по умолчанию</h3><span class="chip">для нетривиальных задач</span></div>
+          <p class="example-caption">Прежде чем разрешить правки — прочитать план и одобрить его осознанно, а не «на автомате» нажать «продолжить».</p>
+        </article>
+
+        <article class="example-card">
+          <div class="example-head"><h3>Разбор публичных постмортемов</h3><span class="chip">учебный приём</span></div>
+          <p class="example-caption">Крупные лаборатории публикуют честные разборы своих сбоев — например, когда деградация «качества» модели оказывается багом в обвязке, а не в самой модели. Разбор таких документов — часть практики потока «Инженер».</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="cta">
+      <h2>Это разбирается на модулях M1, M2 и M9</h2>
+      <p>В программе это не отдельная лекция «для галочки» — дисциплина ревью, оценки качества и безопасности встроена в каждый практический проект.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="programma.html">Смотреть модули</a>
+        <a class="btn" href="index.html#pricing">Записаться</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <span>Академия ИИ · курс профессионального вайбкодинга</span>
+    <a href="mailto:gra4ik.asatryan@gmail.com">gra4ik.asatryan@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.primary-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var isOpen = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { nav.classList.remove('is-open'); });
+    });
+  }
+
+  var buttons = document.querySelectorAll('.track-btn');
+  var cards = document.querySelectorAll('.module-card');
+
+  function applyTrack(track) {
+    cards.forEach(function (card) {
+      var tracks = (card.getAttribute('data-tracks') || '').split(' ');
+      var match = track === 'all' || tracks.indexOf(track) !== -1;
+      card.classList.toggle('is-dimmed', !match);
+    });
+  }
+
+  if (buttons.length) {
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+        applyTrack(btn.getAttribute('data-track'));
+      });
+    });
+    applyTrack('all');
+  }
+
+  // order summary (kontakty.html)
+  var PLANS = {
+    start: { name: 'Старт', price: '9 900 ₽' },
+    practic: { name: 'Практик', price: '24 900 ₽' },
+    engineer: { name: 'Инженер', price: '39 900 ₽' }
+  };
+  var track = new URLSearchParams(location.search).get('track');
+  var plan = track && PLANS[track];
+  var box = document.getElementById('orderSummary');
+  if (plan && box) {
+    document.getElementById('orderPlan').textContent = plan.name;
+    document.getElementById('orderPrice').textContent = plan.price;
+    var cta = document.getElementById('orderCta');
+    cta.href = 'mailto:gra4ik.asatryan@gmail.com?subject=' + encodeURIComponent('Академия ИИ — ' + plan.name) +
+      '&body=' + encodeURIComponent('Хочу записаться на поток «' + plan.name + '» (' + plan.price + ').');
+    box.classList.add('is-visible');
+  }
+
+  // scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length && 'IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  }
+
+  // animated proof-bar counters
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var proofNums = document.querySelectorAll('.proof-num');
+  if (proofNums.length && !reducedMotion && 'IntersectionObserver' in window) {
+    var counterObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        obs.unobserve(entry.target);
+        var el = entry.target;
+        var match = el.textContent.trim().match(/^(\d+)(.*)$/);
+        if (!match) return;
+        var target = parseInt(match[1], 10);
+        var suffix = match[2] || '';
+        var duration = 900;
+        var startTime = null;
+        function tick(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          el.textContent = Math.round(progress * target) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+    proofNums.forEach(function (el) { counterObserver.observe(el); });
+  }
+
+  // hero network canvas — real animated node graph, not a static image
+  var canvas = document.getElementById('networkCanvas');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var wrap = canvas.parentElement;
+    var heroSection = wrap.closest('.hero-section');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0;
+    var nodes = [];
+    var mouse = { x: null, y: null };
+
+    function hexToRgba(hex, alpha) {
+      hex = (hex || '#888888').trim().replace('#', '');
+      if (hex.length === 3) hex = hex.split('').map(function (c) { return c + c; }).join('');
+      var r = parseInt(hex.substring(0, 2), 16) || 136;
+      var g = parseInt(hex.substring(2, 4), 16) || 136;
+      var b = parseInt(hex.substring(4, 6), 16) || 136;
+      return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+    }
+
+    function colors() {
+      var cs = getComputedStyle(document.documentElement);
+      return {
+        line: cs.getPropertyValue('--border-strong') || '#3a3f4a',
+        node: cs.getPropertyValue('--ink-soft') || '#a3a8b4',
+        accent: cs.getPropertyValue('--accent') || '#d9a441'
+      };
+    }
+
+    function resize() {
+      W = wrap.clientWidth; H = wrap.clientHeight;
+      canvas.width = Math.max(1, W * dpr);
+      canvas.height = Math.max(1, H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function makeNodes() {
+      var count = Math.max(20, Math.min(52, Math.round((W * H) / 16000)));
+      nodes = [];
+      for (var i = 0; i < count; i++) {
+        nodes.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.22,
+          vy: (Math.random() - 0.5) * 0.22,
+          r: 1.3 + Math.random() * 1.3
+        });
+      }
+    }
+
+    function frame() {
+      var c = colors();
+      ctx.clearRect(0, 0, W, H);
+      var linkDist = Math.max(70, Math.min(150, W / 6));
+
+      if (!reducedMotion) {
+        for (var i = 0; i < nodes.length; i++) {
+          var n = nodes[i];
+          n.x += n.vx; n.y += n.vy;
+          if (n.x < 0 || n.x > W) n.vx *= -1;
+          if (n.y < 0 || n.y > H) n.vy *= -1;
+          n.x = Math.max(0, Math.min(W, n.x));
+          n.y = Math.max(0, Math.min(H, n.y));
+        }
+      }
+
+      for (var i = 0; i < nodes.length; i++) {
+        for (var j = i + 1; j < nodes.length; j++) {
+          var a = nodes[i], b = nodes[j];
+          var dx = a.x - b.x, dy = a.y - b.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < linkDist) {
+            ctx.strokeStyle = hexToRgba(c.line, (1 - dist / linkDist) * 0.4);
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        var near = false;
+        if (mouse.x !== null) {
+          var dx = n.x - mouse.x, dy = n.y - mouse.y;
+          near = (dx * dx + dy * dy) < 130 * 130;
+        }
+        ctx.fillStyle = near ? c.accent : hexToRgba(c.node, 0.6);
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, near ? n.r * 1.9 : n.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (!reducedMotion) requestAnimationFrame(frame);
+    }
+
+    if (heroSection) {
+      heroSection.addEventListener('mousemove', function (e) {
+        var rect = wrap.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+      heroSection.addEventListener('mouseleave', function () { mouse.x = null; mouse.y = null; });
+    }
+
+    var started = false;
+    function handleSize() {
+      resize();
+      makeNodes();
+      if (!started && W > 0 && H > 0) {
+        started = true;
+        frame();
+      } else if (started && reducedMotion) {
+        frame();
+      }
+    }
+
+    if ('ResizeObserver' in window) {
+      var ro = new ResizeObserver(function () { handleSize(); });
+      ro.observe(wrap);
+    }
+    window.addEventListener('resize', handleSize);
+
+    // poll via rAF until the wrapper actually has real layout size — some
+    // environments report a 0-size viewport for a few frames after load,
+    // and neither 'load' nor ResizeObserver reliably fire again after that.
+    var pollFrames = 0;
+    function pollSize() {
+      if (started) return;
+      handleSize();
+      pollFrames++;
+      if (!started && pollFrames < 180) requestAnimationFrame(pollSize);
+    }
+    pollSize();
+  }
+})();
+
+</script>
+</body>
+</html>
