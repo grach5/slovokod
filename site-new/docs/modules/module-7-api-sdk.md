@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 title: "Модуль 7. Claude API / SDK для разработчиков"
 ---
 
