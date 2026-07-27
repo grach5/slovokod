@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Академия Claude',
   tagline: 'Профессиональная школа работы с Claude — от первого промпта до продакшн-агентов',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   future: {
     v4: true,
@@ -46,7 +46,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/social-card.jpg',
       colorMode: {
         respectPrefersColorScheme: true,
       },
@@ -89,11 +88,6 @@ const config = {
           {to: '/primery', label: 'Примеры', position: 'left'},
           {to: '/#pricing', label: 'Цены', position: 'left'},
           {to: '/kontakty', label: 'Контакты', position: 'left'},
-          {
-            href: 'https://github.com/',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       footer: {

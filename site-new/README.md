@@ -1,43 +1,39 @@
-# Website
+# Академия Claude — сайт
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Сайт курса построен на [Docusaurus](https://docusaurus.io/). Контент — в `docs/`
+(модули программы, ресурсы, руководства) и `src/pages/` (маркетинговые страницы:
+главная, программа, примеры, контакты).
 
-## Installation
+## Установка
 
 ```bash
 npm install
 ```
 
-**Note**: feel free to use the package manager of your choice.
-
-## Local Development
+## Локальная разработка
 
 ```bash
 npm run start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Запускает локальный сервер с горячей перезагрузкой на порт по умолчанию (3000)
+или на `--port <N>`.
 
-## Build
+## Сборка
 
 ```bash
 npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Генерирует статические файлы в `build/` — их можно разместить на любом хостинге
+статики (GitHub Pages, Netlify, Vercel и т.д.).
 
-## Deployment
+## Структура контента
 
-Using SSH:
-
-```bash
-USE_SSH=true npm run deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> npm run deploy
-```
-
-If you are using GitHub Pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- `docs/modules/` — модули программы (M0–M9 + M2.5)
+- `docs/resources/` — раздел «Ресурсы»: официальные материалы, открытое
+  сообщество, наши шаблоны
+- `docs/guides/` — отдельные руководства (например, «Вайбкодинг»)
+- `static/templates/` — скачиваемые шаблоны (CLAUDE.md, memory-bank, библиотека
+  промптов), на которые ссылается раздел «Ресурсы»
+- `src/pages/` — маркетинговые страницы (главная, программа, примеры, контакты)
