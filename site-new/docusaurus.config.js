@@ -88,6 +88,11 @@ const config = {
           {to: '/primery', label: 'Примеры', position: 'left'},
           {to: '/#pricing', label: 'Цены', position: 'left'},
           {to: '/kontakty', label: 'Контакты', position: 'left'},
+          {
+            href: 'https://github.com/grach5/academy-claude',
+            label: 'GitHub',
+            position: 'right',
+          },
         ],
       },
       footer: {

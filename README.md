@@ -4,6 +4,10 @@
 (Anthropic): от первого промпта до продакшн-агентов на Claude API/SDK.
 Независимый образовательный проект — не аффилирован с Anthropic.
 
+🌐 **Живой сайт**: https://grach5.github.io/academy-claude/
+(публикуется автоматически при каждом push в `main` — см.
+`.github/workflows/deploy.yml`)
+
 ## Структура репозитория
 
 - **`site-new/`** — текущий сайт курса (Docusaurus). Смотрите
