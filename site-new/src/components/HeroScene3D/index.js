@@ -3,7 +3,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import {useColorMode} from '@docusaurus/theme-common';
 import styles from './styles.module.css';
 
-function Scene({colorMode}) {
+function Scene({colorMode, compact, seed}) {
   const canvasRef = useRef(null);
   const wrapRef = useRef(null);
   const reduceMotionRef = useRef(false);
@@ -24,15 +24,15 @@ function Scene({colorMode}) {
     // three.js is required here (client-only mount effect) so it never
     // touches Docusaurus's server-side static build pass.
     const {mountNetworkScene} = require('./scene');
-    const accent = colorMode === 'dark' ? '#d9a441' : '#b3801f';
     const line = colorMode === 'dark' ? '#3a3f4a' : '#c9c2b2';
     cleanup = mountNetworkScene(canvasRef.current, wrapRef.current, {
-      accentColor: accent,
       lineColor: line,
       reduceMotion: reduceMotionRef,
+      compact,
+      seed,
     });
     return () => cleanup && cleanup();
-  }, [colorMode]);
+  }, [colorMode, compact, seed]);
 
   return (
     <div className={styles.sceneWrap} ref={wrapRef}>
@@ -41,11 +41,13 @@ function Scene({colorMode}) {
   );
 }
 
-export default function HeroScene3D() {
+export default function HeroScene3D({compact = false, seed = 42}) {
   const {colorMode} = useColorMode();
   return (
     <div aria-hidden="true" className={styles.outer}>
-      <BrowserOnly fallback={null}>{() => <Scene colorMode={colorMode} />}</BrowserOnly>
+      <BrowserOnly fallback={null}>
+        {() => <Scene colorMode={colorMode} compact={compact} seed={seed} />}
+      </BrowserOnly>
     </div>
   );
 }

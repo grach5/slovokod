@@ -1,5 +1,6 @@
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import HeroScene3D from '@site/src/components/HeroScene3D';
 
 const MODULES = [
   {num: 'M0', slug: 'module-0-osnovy-promptinga', title: 'Основы промптинга', tracks: 'Все потоки',
@@ -32,10 +33,13 @@ export default function Programma() {
       title="Программа — Академия Claude"
       description="Полная программа: три потока сложности и одиннадцать модулей — от основ работы с Claude до создания собственных агентов на Claude API.">
       <main>
-        <div className="container ac-hero">
-          <p className="ac-eyebrow">Программа</p>
-          <h1>Одиннадцать модулей, три потока прохождения</h1>
-          <p className="ac-lede">Выберите поток под свою роль — модули открываются по порядку, каждый заканчивается проектом в портфолио.</p>
+        <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>
+          <HeroScene3D compact seed={11} />
+          <div className="container" style={{position: 'relative', zIndex: 1}}>
+            <p className="ac-eyebrow">Программа</p>
+            <h1>Одиннадцать модулей, три потока прохождения</h1>
+            <p className="ac-lede">Выберите поток под свою роль — модули открываются по порядку, каждый заканчивается проектом в портфолио.</p>
+          </div>
         </div>
 
         <section className="ac-section">

@@ -1,4 +1,5 @@
 import Layout from '@theme/Layout';
+import HeroScene3D from '@site/src/components/HeroScene3D';
 
 const EXAMPLES = [
   {tag: 'M0 · Все потоки', title: 'Промпт для анализа', body: (
@@ -72,11 +73,14 @@ export default function Primery() {
       title="Примеры результатов — Академия Claude"
       description="Конкретные примеры результатов обучения по каждому модулю программы — от промпта до собственного агента на Claude API.">
       <main>
-        <div className="container ac-hero">
-          <p className="ac-eyebrow">Примеры</p>
-          <h1>По одному примеру на каждый модуль</h1>
-          <p className="ac-lede">Не пересказ теории, а то, что реально получается на выходе — от переписанного запроса до
-            собственной программы, которая напрямую работает с Claude.</p>
+        <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>
+          <HeroScene3D compact seed={22} />
+          <div className="container" style={{position: 'relative', zIndex: 1}}>
+            <p className="ac-eyebrow">Примеры</p>
+            <h1>По одному примеру на каждый модуль</h1>
+            <p className="ac-lede">Не пересказ теории, а то, что реально получается на выходе — от переписанного запроса до
+              собственной программы, которая напрямую работает с Claude.</p>
+          </div>
         </div>
         <section className="ac-section">
           <div className="container ac-grid cols-3">

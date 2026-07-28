@@ -1,4 +1,5 @@
 import Layout from '@theme/Layout';
+import HeroScene3D from '@site/src/components/HeroScene3D';
 
 const CONTACT_EMAIL = 'gra4ik.asatryan@gmail.com';
 
@@ -18,10 +19,13 @@ export default function Kontakty() {
       title="Контакты — Академия Claude"
       description="Как записаться на курс профессиональной работы с Claude: выбор потока, частые вопросы, контакты.">
       <main>
-        <div className="container ac-hero">
-          <p className="ac-eyebrow">Контакты</p>
-          <h1>Запишитесь на поток</h1>
-          <p className="ac-lede">Короткое письмо с выбранным потоком — этого достаточно, чтобы получить реквизиты и дату старта.</p>
+        <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>
+          <HeroScene3D compact seed={33} />
+          <div className="container" style={{position: 'relative', zIndex: 1}}>
+            <p className="ac-eyebrow">Контакты</p>
+            <h1>Запишитесь на поток</h1>
+            <p className="ac-lede">Короткое письмо с выбранным потоком — этого достаточно, чтобы получить реквизиты и дату старта.</p>
+          </div>
         </div>
         <section className="ac-section">
           <div className="container" style={{maxWidth: '760px'}}>
