@@ -1,5 +1,6 @@
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import HeroScene3D from '@site/src/components/HeroScene3D';
 
 const CONTACT_EMAIL = 'gra4ik.asatryan@gmail.com';
 
@@ -15,7 +16,9 @@ export default function Home() {
       title="Академия Claude — курс профессиональной работы с Claude"
       description="Курс профессиональной работы с Claude (Anthropic): от первого промпта до продакшн-агентов. Десять с половиной модулей, три потока, проектный формат.">
       <main>
-        <div className="container ac-hero">
+        <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>
+          <HeroScene3D />
+          <div className="container" style={{position: 'relative', zIndex: 1}}>
           <p className="ac-eyebrow">Открываем набор</p>
           <h1>Профессиональная работа с <em>Claude</em>: от идеи до готового результата</h1>
           <p className="ac-lede">
@@ -31,6 +34,7 @@ export default function Home() {
           <p style={{marginTop: '1.5rem', fontSize: '0.88rem', opacity: 0.75}}>
             <b>11 модулей</b> · <b>3 потока</b> · проектный формат · портфолио на выходе
           </p>
+          </div>
         </div>
 
         <section className="ac-section">
