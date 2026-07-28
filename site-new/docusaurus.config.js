@@ -11,11 +11,14 @@ const config = {
     v4: true,
   },
 
-  url: 'https://example.com',
-  baseUrl: '/',
+  // TODO: url/organizationName get set to the real GitHub username the
+  // moment the repo is created and pushed (see .github/workflows/deploy.yml
+  // for the GitHub Pages auto-deploy that publishes this on every push).
+  url: 'https://example.github.io',
+  baseUrl: '/academy-claude/',
 
-  organizationName: 'academy-claude',
-  projectName: 'academy-claude-school',
+  organizationName: 'TODO-github-username',
+  projectName: 'academy-claude',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
