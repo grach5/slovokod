@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Официальные материалы Anthropic
 ---
 
@@ -26,7 +26,7 @@ _Часть раздела [«Ресурсы»](./resursy)_
 Официальный сборник рецептов по построению приложений на Claude: агенты, RAG
 (Retrieval-Augmented Generation — поиск нужных данных перед ответом модели),
 tool use, работа со Skills (навыками). Полезно на модуле
-[M7 — Claude API / SDK](/docs/modules/module-7-api-sdk) (поток «Инженер»),
+[M7 — Claude API / SDK](/docs/modules/module-7-api-sdk) (Продвинутый трек),
 когда нужен готовый паттерн решения, а не теория с нуля.
 
 ### [Agent Skills](https://github.com/anthropics/skills)

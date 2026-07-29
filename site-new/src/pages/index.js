@@ -5,37 +5,37 @@ import HeroScene3D from '@site/src/components/HeroScene3D';
 const CONTACT_EMAIL = 'gra4ik.asatryan@gmail.com';
 
 function mailto(plan, price) {
-  const subject = encodeURIComponent(`Академия Claude — ${plan}`);
-  const body = encodeURIComponent(`Хочу записаться на поток «${plan}» (${price}).`);
+  const subject = encodeURIComponent(`Словокод — ${plan}`);
+  const body = encodeURIComponent(`Хочу пройти курс «${plan}» (${price}). Расскажите, как оплатить.`);
   return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 }
 
 export default function Home() {
   return (
     <Layout
-      title="Академия Claude — курс профессиональной работы с Claude"
-      description="Курс профессиональной работы с Claude (Anthropic): от первого промпта до продакшн-агентов. 11 модулей, три потока, проектный формат.">
+      title="Словокод — доведите идею до продукта с ИИ-ассистентом"
+      description="Практический курс: за 5 или 14 дней доведите свою идею до работающего, опубликованного продукта вместе с ИИ-ассистентом (по умолчанию — Claude).">
       <main>
         <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>
           <HeroScene3D />
           <div className="container" style={{position: 'relative', zIndex: 1}}>
-          <p className="ac-eyebrow">Идёт набор</p>
-          <h1>Профессиональная работа с <em>Claude</em>: от идеи до готового результата</h1>
+          <p className="ac-eyebrow">Доступ открывается сразу после оплаты</p>
+          <h1>От идеи до работающего продукта — со <em>Словокодом</em></h1>
           <p className="ac-lede">
-            Разница между «просто пользуюсь ИИ» и профессионалом — не в том, кто использует Claude,
-            а в дисциплине. Курс учит писать и чинить код вместе с Claude, вести автоматизацию,
-            собирать документы, дашборды и собственные агенты на Claude API — и доводить результат
-            до рабочего состояния, а не оставлять черновиком.
+            Разница между «поболтал с ИИ-ассистентом» и «сделал продукт» — не в таланте,
+            а в процедуре: как объяснить задачу, разбить её на проверяемые шаги, не потерять
+            контроль над контекстом и довести результат до опубликованной ссылки, а не черновика.
+            Курс учит этой процедуре на реальных проектах — сайтах и автоматизациях.
           </p>
           <div className="ac-hero-actions">
             <Link className="button button--primary button--lg" to="#pricing">Смотреть тарифы</Link>
             <Link className="button button--outline button--lg" to="/programma">Смотреть программу</Link>
           </div>
           <p style={{marginTop: '1.5rem', fontSize: '0.88rem', opacity: 0.75}}>
-            <b>11 модулей</b> · <b>3 потока</b> · проектный формат · портфолио на выходе
+            <b>19 дней контента</b> · 2 трека (База + Полная) · бонусный трек вглубь Claude · доступ навсегда
           </p>
           <p style={{marginTop: '0.6rem', fontSize: '0.88rem'}}>
-            <Link to="/docs/modules/s-chego-nachat">Ещё не пользовались Claude? Начните здесь →</Link>
+            <Link to="/docs/baza/den-1">Ничего раньше не собирали с ИИ? Начните с Дня 1 →</Link>
           </p>
           </div>
         </div>
@@ -45,31 +45,31 @@ export default function Home() {
             <span className="ac-eyebrow">Простыми словами</span>
             <h2>Чему вы научитесь и что получите на выходе</h2>
             <p style={{maxWidth: '62ch', opacity: 0.8, marginTop: '0.5rem'}}>
-              Профессиональная работа с Claude — это когда вы чётко объясняете, что нужно сделать,
-              а Claude пишет код и собирает результат. Вы отвечаете за идею и проверку, а не
-              печатаете код вручную с нуля.
+              Собрать продукт с ИИ-ассистентом — это не «попросить один раз и получить готовое».
+              Это цикл: чётко объяснить задачу → разбить на проверяемые шаги → проверить факт,
+              а не ощущение → сохранить рабочую версию. Курс учит именно этому циклу — на сайте
+              в «Базе», на полноценном продукте с базой данных и публикацией в «Полной».
             </p>
             <div className="ac-grid cols-4" style={{marginTop: '1.5rem'}}>
               <div className="ac-card">
-                <span className="ac-eyebrow">Делать сайты и программы</span>
-                <p>Опишете словами, что нужно — получите работающий сайт, приложение или программу,
-                  даже если раньше никогда не программировали.</p>
+                <span className="ac-eyebrow">Собирать сайты и автоматизации</span>
+                <p>Опишете словами, что нужно, — получите работающий, опубликованный в интернете
+                  продукт, даже если раньше никогда не программировали.</p>
               </div>
               <div className="ac-card">
-                <span className="ac-eyebrow">Экономить часы на рутине</span>
-                <p>Документы, таблицы, отчёты и переписка — Claude берёт на себя черновую работу, вы
-                  проверяете и дорабатываете.</p>
+                <span className="ac-eyebrow">Не терять контроль над проектом</span>
+                <p>Файл проекта, точки возврата и разбивка на шаги — чтобы правка не ломала то,
+                  что уже работало вчера.</p>
               </div>
               <div className="ac-card">
-                <span className="ac-eyebrow">Находить и чинить ошибки</span>
-                <p>Разбираться, что пошло не так в коде, и уверенно это исправлять — вместе с Claude,
-                  а не наугад.</p>
+                <span className="ac-eyebrow">Чинить, а не гадать</span>
+                <p>Пятишаговая процедура отладки: факты вместо «не работает» — отличает 10 минут
+                  починки от вечера, потраченного впустую.</p>
               </div>
               <div className="ac-card">
-                <span className="ac-eyebrow">Экономить токены и деньги</span>
-                <p>Отдельный модуль про память и контекст — пригодится, если вы сами подключите
-                  Claude API отдельно от курса: платится он по объёму использования, отдельно от
-                  оплаты обучения.</p>
+                <span className="ac-eyebrow">Не хранить пароли в коде</span>
+                <p>Ключи, секреты, права доступа к базе — отдельный день курса, потому что именно
+                  здесь чаще всего случаются утечки у новичков.</p>
               </div>
             </div>
           </div>
@@ -78,31 +78,30 @@ export default function Home() {
         <section className="ac-section">
           <div className="container">
             <div style={{display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem'}}>
-              <div><span className="ac-eyebrow">Три потока</span><h2>Выберите путь под свою роль</h2></div>
+              <div><span className="ac-eyebrow">Два трека + бонус</span><h2>Выберите глубину</h2></div>
               <Link to="/programma" style={{fontWeight: 700}}>Вся программа →</Link>
             </div>
             <div className="ac-grid cols-3">
               <div className="ac-card ac-track-card">
-                <span className="ac-track-eyebrow">Поток 01</span>
-                <h3>Старт</h3>
-                <p>Без единой строчки кода: научитесь правильно формулировать запросы к Claude,
-                  готовить документы и отчёты, находить нужную информацию в интернете.</p>
-                <p className="ac-track-stat">4 модуля · ≈6 недель</p>
+                <span className="ac-track-eyebrow">Трек «База»</span>
+                <h3>5 дней</h3>
+                <p>Только браузер, без терминала и баз данных: с нуля до опубликованного сайта.
+                  Освоите главный цикл — задание, шаги, проверка по фактам.</p>
+                <p className="ac-track-stat">5 дней · итог — сайт в интернете</p>
               </div>
               <div className="ac-card ac-track-card">
-                <span className="ac-track-eyebrow">Поток 02</span>
-                <h3>Практик</h3>
-                <p>Всё из «Старта» + научитесь писать и исправлять код вместе с Claude Code (тем же
-                  Claude, но в редакторе/терминале для работы с кодом), автоматизировать рутинные
-                  задачи, создавать простые сайты и приложения.</p>
-                <p className="ac-track-stat">9 модулей · ≈14 недель</p>
+                <span className="ac-track-eyebrow">Трек «Полная»</span>
+                <h3>14 дней</h3>
+                <p>Всё из «Базы» плюс терминал, репозиторий и точки возврата, база данных, ключи
+                  и секреты, отладка по процедуре, агентные режимы и финальный кейс в портфолио.</p>
+                <p className="ac-track-stat">14 дней · итог — продукт с базой данных и кейс</p>
               </div>
               <div className="ac-card ac-track-card">
-                <span className="ac-track-eyebrow">Поток 03</span>
-                <h3>Инженер</h3>
-                <p>Всё из «Практика» плюс создание собственных программ на Claude API/SDK и умение
-                  делать это надёжно и безопасно.</p>
-                <p className="ac-track-stat">11 модулей · ≈17 недель</p>
+                <span className="ac-track-eyebrow">Бонус</span>
+                <h3>Продвинутый трек</h3>
+                <p>Для тех, кто прошёл «Полную» и хочет глубже именно в Claude: Claude Code, MCP
+                  и агенты, память и токены, Claude API/SDK, интерактивные артефакты.</p>
+                <p className="ac-track-stat">11 модулей · входит в тариф «Полная» и «Максимум»</p>
               </div>
             </div>
           </div>
@@ -116,29 +115,28 @@ export default function Home() {
             </div>
             <div className="ac-grid cols-3">
               <div className="ac-card ac-example-card">
-                <h4>M0 · Все потоки · Промпт до/после</h4>
+                <h4>День 2 · «Полная» · Задание до/после</h4>
                 <div className="ac-compare-row">
                   <span className="ac-compare-label bad">До</span>
-                  «Напиши письмо клиенту»
+                  «Сделай сайт для записи клиентов»
                 </div>
                 <div className="ac-compare-row">
                   <span className="ac-compare-label good">После</span>
-                  «Ты — менеджер поддержки интернет-магазина. Письмо клиенту Ивану: заказ задержан
-                  на 3 дня, тон извиняющийся, без обещания компенсации, 5–7 предложений»
+                  ТЗ из 6 блоков: что это, кто пользуется, что делает по шагам, что сохраняется,
+                  ограничения, критерии готовности — каждый пункт да/нет
                 </div>
               </div>
               <div className="ac-card ac-example-card">
-                <h4>M1 · Практик / Инженер · Правка бага</h4>
+                <h4>День 11 · «Полная» · Отладка по фактам</h4>
                 <div className="ac-compare-row">
                   <span className="ac-compare-label bad">Было</span>
-                  <code>total = price * qty</code><br/>
+                  «не работает» → ассистент гадает и переписывает рабочий код<br/>
                   <span className="ac-compare-label good">Стало</span>
-                  <code>total = round(price * qty, 2)</code>
-                  <p style={{fontSize: '0.82rem', opacity: 0.7, marginTop: '0.4rem'}}># тест: округление до копеек при дробной цене</p>
+                  карточка: что делал → что ожидал → что увидел → текст ошибки дословно
                 </div>
               </div>
               <div className="ac-card ac-example-card">
-                <h4>M9 · Инженер · Проверка качества кода от Claude</h4>
+                <h4>Продвинутый трек · Проверка кода</h4>
                 <div className="ac-compare-row">
                   Кейсов: 40 · Прошло: 34 · Провал: 6<br/>
                   Класс ошибки: неверная обработка часовых поясов (5 из 6)
@@ -154,8 +152,8 @@ export default function Home() {
             <span className="ac-eyebrow">Не «на глазок»</span>
             <h2>Учим делать это по-настоящему хорошо</h2>
             <p style={{maxWidth: '62ch', opacity: 0.8, marginTop: '0.5rem'}}>
-              Использование Claude при написании кода уже стало нормой, но далеко не все проверяют
-              результат так, как должны. Мы учим проверять код тестами, ревью и явными критериями —
+              Использование ИИ-ассистентов при сборке продуктов уже стало нормой, но далеко не все
+              проверяют результат так, как должны. Мы учим проверять по критериям и фактам —
               а не полагаться на то, что «выглядит рабочим».
             </p>
             <p style={{marginTop: '1.5rem'}}>
@@ -166,56 +164,52 @@ export default function Home() {
 
         <section className="ac-section" id="pricing">
           <div className="container">
-            <span className="ac-eyebrow">Тарифы набора</span>
-            <h2>Выберите свой поток</h2>
-            <p style={{opacity: 0.8, marginTop: '0.5rem'}}>Доступ к материалам остаётся у вас навсегда — оплата целиком или в рассрочку
-              (для «Практика» и «Инженера»). Формат — живые занятия плюс материалы в записи.</p>
+            <span className="ac-eyebrow">Тарифы</span>
+            <h2>Выберите свой трек</h2>
+            <p style={{opacity: 0.8, marginTop: '0.5rem'}}>Доступ ко всем дням тарифа открывается сразу и целиком, навсегда — без потоков,
+              расписания и ожидания старта. Оплата — по договорённости в переписке, без формы на сайте.</p>
             <div className="ac-grid cols-3" style={{marginTop: '1.5rem', alignItems: 'stretch'}}>
               <div className="ac-card ac-price-card">
-                <h3>Старт</h3>
-                <div className="ac-price-tag">9 900 ₽</div>
-                <p className="ac-price-note">разовая оплата · без рассрочки</p>
+                <h3>База</h3>
+                <div className="ac-price-tag">20 000 ₽</div>
+                <p className="ac-price-note">разовая оплата</p>
                 <ul className="ac-price-features">
-                  <li>4 модуля, ≈11 занятий</li>
-                  <li>Промптинг, документы, аналитика, исследования</li>
-                  <li>4 проекта в портфолио</li>
+                  <li>5 дней, 5 тестов самопроверки</li>
+                  <li>Готовый промпт для копирования на каждый день</li>
+                  <li>Чек-листы приёмки к каждому дню</li>
                   <li>Доступ к материалам навсегда</li>
                 </ul>
-                <Link className="button button--outline button--block" to={mailto('Старт', '9 900 ₽')}>Записаться — 9 900 ₽</Link>
+                <Link className="button button--outline button--block" to={mailto('База', '20 000 ₽')}>Написать — 20 000 ₽</Link>
               </div>
               <div className="ac-card ac-price-card is-recommended">
-                <span className="ac-price-badge">Популярный выбор</span>
-                <h3>Практик</h3>
-                <div className="ac-price-tag">24 900 ₽</div>
-                <p className="ac-price-note">оплата целиком или рассрочка на 3 месяца</p>
+                <span className="ac-price-badge">Основной тариф</span>
+                <h3>Полная</h3>
+                <div className="ac-price-tag">35 000 ₽</div>
+                <p className="ac-price-note">разовая оплата</p>
                 <ul className="ac-price-features">
-                  <li>9 модулей, ≈27 занятий</li>
-                  <li>Всё из «Старта» + Claude Code, автоматизация, память и токены, интеграции</li>
-                  <li>9 проектов в портфолио</li>
-                  <li>Разбор кода в формате код-ревью</li>
+                  <li>14 дней, 14 тестов самопроверки</li>
+                  <li>Всё из «Базы» + терминал, база данных, ключи, отладка, кейс в портфолио</li>
+                  <li>Полный набор шаблонов, чек-листов и стартовая библиотека промптов</li>
+                  <li>Продвинутый трек (11 модулей) — в подарок</li>
                 </ul>
-                <Link className="button button--primary button--block" to={mailto('Практик', '24 900 ₽')}>Записаться — 24 900 ₽</Link>
+                <Link className="button button--primary button--block" to={mailto('Полная', '35 000 ₽')}>Написать — 35 000 ₽</Link>
               </div>
               <div className="ac-card ac-price-card">
-                <h3>Инженер</h3>
-                <div className="ac-price-tag">39 900 ₽</div>
-                <p className="ac-price-note">оплата целиком или рассрочка на 3 месяца</p>
+                <h3>Максимум</h3>
+                <div className="ac-price-tag">50 000 ₽</div>
+                <p className="ac-price-note">разовая оплата</p>
                 <ul className="ac-price-features">
-                  <li>11 модулей, ≈35 занятий</li>
-                  <li>Всё из «Практика» + создание собственных агентов на Claude API/SDK</li>
-                  <li>11 проектов в портфолио</li>
-                  <li>Собственное приложение как финальный проект</li>
+                  <li>Всё из «Полной»</li>
+                  <li>Каталог 7 типов проектов — как перенести процедуру на бота, автоматизацию и другое</li>
+                  <li>Дополнительные разборы и приоритетная почтовая поддержка</li>
+                  <li>Расширенные критерии приёмки для нестандартных проектов</li>
                 </ul>
-                <Link className="button button--outline button--block" to={mailto('Инженер', '39 900 ₽')}>Записаться — 39 900 ₽</Link>
+                <Link className="button button--outline button--block" to={mailto('Максимум', '50 000 ₽')}>Написать — 50 000 ₽</Link>
               </div>
             </div>
             <p style={{textAlign: 'center', marginTop: '1.5rem', fontSize: '0.85rem', opacity: 0.7}}>
-              Цены актуальны для текущего набора: при записи сумма и график рассрочки фиксируются
-              и больше не меняются.
-            </p>
-            <p style={{textAlign: 'center', marginTop: '0.5rem', fontSize: '0.85rem', opacity: 0.7}}>
-              Кнопка «Записаться» откроет письмо в вашей почтовой программе — если она не
-              настроена, напишите нам на {CONTACT_EMAIL}.
+              Кнопка откроет письмо в вашей почтовой программе — если она не настроена, напишите
+              нам напрямую на {CONTACT_EMAIL}.
             </p>
           </div>
         </section>
@@ -224,21 +218,22 @@ export default function Home() {
           <div className="ac-guarantee">
             <div className="ac-guarantee-icon">✓</div>
             <div>
-              <h3 style={{marginBottom: '0.3rem'}}>Гарантия первых двух занятий</h3>
-              <p style={{opacity: 0.8}}>Если после первых двух занятий поймёте, что курс не подходит — напишите на
-                {' '}{CONTACT_EMAIL} с темой «Возврат», и в течение 3 рабочих дней вернём полную
-                стоимость тем же способом, которым получили оплату. Без вопросов и объяснений.</p>
+              <h3 style={{marginBottom: '0.3rem'}}>Честно про возврат</h3>
+              <p style={{opacity: 0.8}}>Мы не берём оплату без предварительного разговора, поэтому формального «окна на
+                возврат» нет. Если материалы всё же не подошли — напишите на {' '}
+                {CONTACT_EMAIL}, разберём вопрос индивидуально. Подробности — в{' '}
+                <Link to="/docs/legal/oferta">оферте (черновик)</Link>.</p>
             </div>
           </div>
         </div>
 
         <div className="container">
           <div className="ac-cta">
-            <h2>Первый поток — больше внимания каждому</h2>
-            <p style={{opacity: 0.8}}>Детали каждого модуля уже расписаны по занятиям, проектам и критериям проверки;
-              на первом наборе группы меньше, а программа гибче под вопросы студентов.</p>
+            <h2>Готовы довести идею до продукта?</h2>
+            <p style={{opacity: 0.8}}>Каждый день расписан по шагам, с готовыми промптами для копирования и критериями
+              приёмки — а не только теорией.</p>
             <div className="ac-cta-actions">
-              <Link className="button button--primary button--lg" to="/kontakty">Записаться</Link>
+              <Link className="button button--primary button--lg" to="/kontakty">Написать нам</Link>
               <Link className="button button--outline button--lg" to="/programma">Смотреть программу</Link>
             </div>
           </div>

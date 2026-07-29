@@ -42,13 +42,13 @@ function QuarterChart() {
 }
 
 const EXAMPLES = [
-  {tag: 'M0 · Все потоки', title: 'Промпт для анализа', body: (
+  {tag: 'M0 · Продвинутый трек', title: 'Промпт для анализа', body: (
     <>
       <div className="ac-compare-row"><span className="ac-compare-label bad">До</span>«Проанализируй этот отчёт»</div>
       <div className="ac-compare-row"><span className="ac-compare-label good">После</span>«Проанализируй Q2-отчёт по продажам: выдели 3 главных тренда, сравни с Q1, ответ — буллеты, не длиннее 150 слов»</div>
     </>
   )},
-  {tag: 'M1 · Практик / Инженер', title: 'Исправление бага',
+  {tag: 'M1 · Продвинутый трек', title: 'Исправление бага',
     caption: 'Падение с KeyError на несуществующем пользователе — исправлено и покрыто тестом.', body: (
     <div className="ac-compare-row" style={{fontFamily: 'var(--ifm-font-family-monospace)', fontSize: '0.85rem'}}>
       <div>- return db.users[id]</div>
@@ -59,7 +59,7 @@ const EXAMPLES = [
       <p style={{opacity: 0.7, marginTop: '0.4rem'}}># тест: get_user с несуществующим id больше не падает</p>
     </div>
   )},
-  {tag: 'M2 · Практик / Инженер', title: 'Регулярный агент',
+  {tag: 'M2 · Продвинутый трек', title: 'Регулярный агент',
     caption: 'Агент сам проверяет источник по расписанию и присылает сводку только при изменениях.', body: (
     <div className="ac-compare-row" style={{fontFamily: 'var(--ifm-font-family-monospace)', fontSize: '0.85rem'}}>
       расписание: пятница 09:00<br/>
@@ -70,42 +70,42 @@ const EXAMPLES = [
       при сбое источника: повтор через 30 мин, затем алерт
     </div>
   )},
-  {tag: 'M2.5 · Практик / Инженер', title: 'Обновление memory-bank',
+  {tag: 'M2.5 · Продвинутый трек', title: 'Обновление memory-bank',
     caption: 'Claude сам ведёт заметки о проекте между сессиями и обновляет их по запросу.', body: (
     <div className="ac-compare-row">
       «Обнови activeContext.md и progress.md: что сделано, что осталось открытым вопросом,
       что дальше. Файл productContext.md трогай только при новых архитектурных решениях».
     </div>
   )},
-  {tag: 'M3 · Все потоки', title: 'Очистка данных',
+  {tag: 'M3 · Продвинутый трек', title: 'Очистка данных',
     caption: 'Так выглядит сырой экспорт из Excel/Google Таблиц с лишними разделителями — и что с ним делает Claude.', body: (
     <>
       <div className="ac-compare-row"><span className="ac-compare-label bad">До</span><span style={{fontFamily: 'var(--ifm-font-family-monospace)', fontSize: '0.85rem'}}>name,, revenue,,<br/>Иванов,,120000,,<br/>Петров,,98000,,</span></div>
       <div className="ac-compare-row"><span className="ac-compare-label good">После</span><span style={{fontFamily: 'var(--ifm-font-family-monospace)', fontSize: '0.85rem'}}>Иванов — 120 000 ₽<br/>Петров — 98 000 ₽</span></div>
     </>
   )},
-  {tag: 'M4 · Все потоки', title: 'Дашборд по кварталам',
+  {tag: 'M4 · Продвинутый трек', title: 'Дашборд по кварталам',
     caption: 'Столбчатая диаграмма, а не «универсальный» линейный график на все случаи — с акцентом на Q4.', body: (
     <div className="ac-compare-row"><QuarterChart /></div>
   )},
-  {tag: 'M5 · Все потоки', title: 'Исследовательский отчёт', body: (
+  {tag: 'M5 · Продвинутый трек', title: 'Исследовательский отчёт', body: (
     <div className="ac-compare-row">«Рынок вырос на 12% в 2025 году¹, основной вклад внесли облачные
       сервисы²».<p style={{fontSize: '0.82rem', opacity: 0.7, marginTop: '0.5rem'}}>¹ отраслевой отчёт, 2025 · ² пресс-релиз поставщика, март 2026</p></div>
   )},
-  {tag: 'M6 · Практик / Инженер', title: 'Интерактивный тренажёр', body: (
+  {tag: 'M6 · Продвинутый трек', title: 'Интерактивный тренажёр', body: (
     <div className="ac-compare-row" style={{fontFamily: 'var(--ifm-font-family-monospace)', fontSize: '0.85rem'}}>
       Сумма займа: 500 000 ₽<br/>Ставка: 14%<br/>Срок: 24 мес.<br/>—<br/>Платёж в месяц: 24 006 ₽
     </div>
   )},
-  {tag: 'M7 · Инженер', title: 'Экономия на повторных запросах', body: (
+  {tag: 'M7 · Продвинутый трек', title: 'Экономия на повторных запросах', body: (
     <div className="ac-compare-row">Раздутая системная инструкция, повторяющаяся от запроса к
       запросу, кэшируется — первый вызов полной цены, повторные значительно дешевле и быстрее.</div>
   )},
-  {tag: 'M8 · Практик / Инженер', title: 'Сводка в Slack', body: (
+  {tag: 'M8 · Продвинутый трек', title: 'Сводка в Slack', body: (
     <div className="ac-compare-row">«@Ассистент сделай сводку этого треда» →
       «3 участника согласовали дату релиза (20 августа), остался вопрос миграции базы».</div>
   )},
-  {tag: 'M9 · Инженер', title: 'Проверка качества кода', body: (
+  {tag: 'M9 · Продвинутый трек', title: 'Проверка качества кода', body: (
     <div className="ac-compare-row">Кейсов: 40 · Прошло: 34 · Провал: 6<br/>Класс ошибки: неверная
       обработка часовых поясов (5 из 6)<p style={{opacity: 0.7, marginTop: '0.4rem'}}>→ исправление одного класса ошибок вместо 6 отдельных правок</p></div>
   )},
@@ -114,26 +114,26 @@ const EXAMPLES = [
 export default function Primery() {
   return (
     <Layout
-      title="Примеры результатов — Академия Claude"
-      description="Конкретные примеры результатов обучения по каждому модулю программы — от промпта до собственного агента на Claude API.">
+      title="Примеры результатов — Словокод"
+      description="Конкретные примеры того, что получается собрать с Claude на практике — от переписанного запроса до модулей бонусного Продвинутого трека.">
       <main>
         <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>
           <HeroScene3D compact seed={22} />
           <div className="container" style={{position: 'relative', zIndex: 1}}>
             <p className="ac-eyebrow">Примеры</p>
-            <h1>По одному примеру на каждый модуль</h1>
-            <p className="ac-lede">Не пересказ теории, а то, что реально получается на выходе — от переписанного запроса до
-              собственной программы, которая напрямую работает с Claude.</p>
+            <h1>Не пересказ теории — то, что получается на выходе</h1>
+            <p className="ac-lede">От переписанного запроса и починки бага по фактам (дни основного курса) до
+              собственного агента на Claude API (бонусный Продвинутый трек).</p>
             <p style={{fontSize: '0.85rem', opacity: 0.7, marginTop: '0.5rem'}}>
               Впервые слышите про Claude? Это ИИ-ассистент от Anthropic, доступен на claude.ai — что это и как
-              записаться к нам, смотрите в <Link to="/kontakty">частых вопросах</Link>.
+              начать, смотрите в <Link to="/kontakty">частых вопросах</Link>.
             </p>
           </div>
         </div>
         <section className="ac-section" style={{paddingBottom: 0}}>
           <div className="container" style={{display: 'flex', flexWrap: 'wrap', gap: '0.4rem 1.6rem', fontSize: '0.82rem', opacity: 0.75, marginBottom: '1.2rem'}}>
-            <span>M0–M9 — номера модулей программы (M2.5 — доп. модуль между M2 и M3), метка на карточке ведёт к описанию модуля</span>
-            <span>Поток — Старт, Практик или Инженер; чем отличаются — на странице <Link to="/#pricing">тарифов</Link></span>
+            <span>M0–M9 — модули бонусного Продвинутого трека (M2.5 — доп. модуль между M2 и M3), метка на карточке ведёт к описанию модуля</span>
+            <span>Что входит в каждый тариф — на странице <Link to="/#pricing">тарифов</Link></span>
           </div>
         </section>
         <section className="ac-section" style={{paddingTop: 0}}>

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 title: Наши шаблоны
 ---
 
@@ -8,7 +8,7 @@ title: Наши шаблоны
 полезными, без «воды».
 
 ### [CLAUDE.md — стартовый шаблон](pathname:///templates/CLAUDE.md.example)
-**Требует Claude Code · поток «Практик» / «Инженер»** (файл, откроется в новой вкладке)
+**Требует Claude Code · Продвинутый трек** (файл, откроется в новой вкладке)
 
 Компактный файл правил проекта (команды, соглашения, зоны «не трогать»,
 критерий готовности задачи) — скопируйте в корень своего проекта и адаптируйте.
@@ -16,7 +16,7 @@ title: Наши шаблоны
 [«Токены, память и контекст»](/docs/modules/module-2t-tokeny-pamyat-kontekst).
 
 ### [Набор memory-bank](pathname:///templates/memory-bank/README.md)
-**Требует Claude Code · поток «Практик» / «Инженер»** (файл, откроется в новой вкладке)
+**Требует Claude Code · Продвинутый трек** (файл, откроется в новой вкладке)
 
 Пять ролевых markdown-файлов (`productContext`, `activeContext`, `decisionLog`,
 `progress`, `systemPatterns`) — практика, вдохновлённая проектом

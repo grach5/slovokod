@@ -3,8 +3,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Академия Claude',
-  tagline: 'Профессиональная школа работы с Claude — от первого промпта до продакшн-агентов',
+  title: 'Словокод',
+  tagline: 'Доведите свою идею до работающего продукта с ИИ-ассистентом за 14 дней',
   favicon: 'img/favicon.svg',
 
   future: {
@@ -12,10 +12,10 @@ const config = {
   },
 
   url: 'https://grach5.github.io',
-  baseUrl: '/academy-claude/',
+  baseUrl: '/slovokod/',
 
   organizationName: 'grach5',
-  projectName: 'academy-claude',
+  projectName: 'slovokod',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -53,30 +53,42 @@ const config = {
         {
           name: 'description',
           content:
-            'Академия Claude — практический курс профессиональной работы с Claude (Anthropic): промптинг, Claude Code, агенты, документы, аналитика, API/SDK. Независимый образовательный проект, не аффилирован с Anthropic.',
+            'Словокод — практический курс: доведите идею до работающего продукта с ИИ-ассистентом за 14 дней. Независимый образовательный проект, не аффилирован с Anthropic и другими упомянутыми компаниями.',
         },
       ],
       announcementBar: {
         id: 'disclaimer',
         content:
-          '🎓 Академия Claude — независимый образовательный проект. Мы не являемся Anthropic и не аффилированы с компанией; название Claude используется описательно, для обозначения предмета обучения.',
+          '🎓 Словокод — независимый образовательный проект. Мы не связаны с Anthropic, GitHub и другими упомянутыми компаниями. Методика применима к разным ИИ-ассистентам; в материалах по умолчанию используется Claude.',
         backgroundColor: '#14161c',
         textColor: '#eef0f4',
         isCloseable: true,
       },
       navbar: {
-        title: 'Академия Claude',
+        title: 'Словокод',
         logo: {
-          alt: 'Академия Claude',
+          alt: 'Словокод',
           src: 'img/logo.svg',
         },
         items: [
           {to: '/programma', label: 'Программа', position: 'left'},
           {
             type: 'docSidebar',
+            sidebarId: 'bazaSidebar',
+            position: 'left',
+            label: 'База (5 дней)',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'polnayaSidebar',
+            position: 'left',
+            label: 'Полная (14 дней)',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'modulesSidebar',
             position: 'left',
-            label: 'Модули',
+            label: 'Продвинутый трек',
           },
           {
             type: 'docSidebar',
@@ -84,12 +96,11 @@ const config = {
             position: 'left',
             label: 'Ресурсы',
           },
-          {to: '/docs/guides/vibecoding', label: 'Вайбкодинг', position: 'left'},
           {to: '/primery', label: 'Примеры', position: 'left'},
           {to: '/#pricing', label: 'Цены', position: 'left'},
           {to: '/kontakty', label: 'Контакты', position: 'left'},
           {
-            href: 'https://github.com/grach5/academy-claude',
+            href: 'https://github.com/grach5/slovokod',
             label: 'GitHub',
             position: 'right',
           },
@@ -102,16 +113,19 @@ const config = {
             title: 'Обучение',
             items: [
               {label: 'Программа', to: '/programma'},
-              {label: 'Модули курса', to: '/docs/modules/module-0-osnovy-promptinga'},
+              {label: 'База (5 дней)', to: '/docs/baza/den-1'},
+              {label: 'Полная (14 дней)', to: '/docs/polnaya/den-1'},
+              {label: 'Продвинутый трек', to: '/docs/modules/module-0-osnovy-promptinga'},
               {label: 'Ресурсы', to: '/docs/resources/resursy'},
-              {label: 'Вайбкодинг', to: '/docs/guides/vibecoding'},
             ],
           },
           {
-            title: 'О школе',
+            title: 'О курсе',
             items: [
               {label: 'Примеры результатов', to: '/primery'},
               {label: 'Контакты и FAQ', to: '/kontakty'},
+              {label: 'Оферта (черновик)', to: '/docs/legal/oferta'},
+              {label: 'Политика данных (черновик)', to: '/docs/legal/privacy'},
             ],
           },
           {
@@ -124,7 +138,7 @@ const config = {
             ],
           },
         ],
-        copyright: `© ${new Date().getFullYear()} Академия Claude · курс профессиональной работы с Claude · независимый образовательный проект, не аффилирован с Anthropic.`,
+        copyright: `© ${new Date().getFullYear()} Словокод · практический курс с ИИ-ассистентом · независимый образовательный проект, не аффилирован с Anthropic.`,
       },
       prism: {
         theme: prismThemes.github,
