@@ -1,10 +1,11 @@
-# Академия Claude
+# Словокод
 
-Практическая школа профессиональной работы с [Claude](https://www.anthropic.com/claude)
-(Anthropic): от первого промпта до продакшн-агентов на Claude API/SDK.
-Независимый образовательный проект — не аффилирован с Anthropic.
+Практический курс: доведите идею до работающего продукта с ИИ-ассистентом
+(по умолчанию — [Claude](https://www.anthropic.com/claude), Anthropic) за
+5 дней («База») или 14 дней («Полная»), плюс бонусный Продвинутый трек
+вглубь Claude. Независимый образовательный проект — не аффилирован с Anthropic.
 
-🌐 **Живой сайт**: https://grach5.github.io/academy-claude/
+🌐 **Живой сайт**: https://grach5.github.io/slovokod/
 (публикуется автоматически при каждом push в `main` — см.
 `.github/workflows/deploy.yml`)
 

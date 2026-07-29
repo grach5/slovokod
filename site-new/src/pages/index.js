@@ -1,5 +1,6 @@
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import Heading from '@theme/Heading';
 import HeroScene3D from '@site/src/components/HeroScene3D';
 
 const CONTACT_EMAIL = 'gra4ik.asatryan@gmail.com';
@@ -13,7 +14,7 @@ function mailto(plan, price) {
 export default function Home() {
   return (
     <Layout
-      title="Словокод — доведите идею до продукта с ИИ-ассистентом"
+      title="Доведите идею до продукта с ИИ-ассистентом"
       description="Практический курс: за 5 или 14 дней доведите свою идею до работающего, опубликованного продукта вместе с ИИ-ассистентом (по умолчанию — Claude).">
       <main>
         <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>
@@ -162,10 +163,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="ac-section" id="pricing">
+        <section className="ac-section">
           <div className="container">
             <span className="ac-eyebrow">Тарифы</span>
-            <h2>Выберите свой трек</h2>
+            <Heading as="h2" id="pricing">Выберите свой трек</Heading>
             <p style={{opacity: 0.8, marginTop: '0.5rem'}}>Все дни курса уже открыты на сайте — читайте и пробуйте задания бесплатно, без
               регистрации. Оплата — это не технический ключ, а то, что делает вас нашим учеником:
               право написать нам с вопросом по материалам (ответ обычно в течение суток) и, в «Максимуме»,

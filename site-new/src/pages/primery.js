@@ -114,7 +114,7 @@ const EXAMPLES = [
 export default function Primery() {
   return (
     <Layout
-      title="Примеры результатов — Словокод"
+      title="Примеры результатов"
       description="Конкретные примеры того, что получается собрать с Claude на практике — от переписанного запроса до модулей бонусного Продвинутого трека.">
       <main>
         <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>

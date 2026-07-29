@@ -48,7 +48,7 @@ function CopyEmailButton({email}) {
 export default function Kontakty() {
   return (
     <Layout
-      title="Контакты — Словокод"
+      title="Контакты"
       description="Как начать: выбор тарифа, частые вопросы, контакты курса Словокод.">
       <main>
         <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>

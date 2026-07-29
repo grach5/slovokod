@@ -55,7 +55,7 @@ const MODULES = [
 export default function Programma() {
   return (
     <Layout
-      title="Программа — Словокод"
+      title="Программа"
       description="Два трека — «База» (5 дней) и «Полная» (14 дней) — плюс бонусный Продвинутый трек из 11 модулей вглубь Claude.">
       <main>
         <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>

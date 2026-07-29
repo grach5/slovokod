@@ -4,7 +4,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Словокод',
-  tagline: 'Доведите свою идею до работающего продукта с ИИ-ассистентом за 14 дней',
+  tagline: 'Доведите свою идею до работающего продукта с ИИ-ассистентом за 5 или 14 дней',
   favicon: 'img/favicon.svg',
 
   future: {
@@ -18,7 +18,12 @@ const config = {
   projectName: 'slovokod',
 
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'ru',
@@ -49,13 +54,6 @@ const config = {
       colorMode: {
         respectPrefersColorScheme: true,
       },
-      metadata: [
-        {
-          name: 'description',
-          content:
-            'Словокод — практический курс: доведите идею до работающего продукта с ИИ-ассистентом за 14 дней. Независимый образовательный проект, не аффилирован с Anthropic и другими упомянутыми компаниями.',
-        },
-      ],
       announcementBar: {
         id: 'disclaimer',
         content:
