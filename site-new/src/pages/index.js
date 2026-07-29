@@ -19,7 +19,7 @@ export default function Home() {
         <div className="ac-hero" style={{position: 'relative', overflow: 'hidden'}}>
           <HeroScene3D />
           <div className="container" style={{position: 'relative', zIndex: 1}}>
-          <p className="ac-eyebrow">Доступ открывается сразу после оплаты</p>
+          <p className="ac-eyebrow">Без потоков и дат старта</p>
           <h1>От идеи до работающего продукта — со <em>Словокодом</em></h1>
           <p className="ac-lede">
             Разница между «поболтал с ИИ-ассистентом» и «сделал продукт» — не в таланте,
@@ -35,7 +35,7 @@ export default function Home() {
             <b>19 дней контента</b> · 2 трека (База + Полная) · бонусный трек вглубь Claude · доступ навсегда
           </p>
           <p style={{marginTop: '0.6rem', fontSize: '0.88rem'}}>
-            <Link to="/docs/baza/den-1">Ничего раньше не собирали с ИИ? Начните с Дня 1 →</Link>
+            <Link to="/docs/baza/den-1">Все дни открыты для чтения бесплатно — начните с Дня 1 →</Link>
           </p>
           </div>
         </div>
@@ -166,8 +166,11 @@ export default function Home() {
           <div className="container">
             <span className="ac-eyebrow">Тарифы</span>
             <h2>Выберите свой трек</h2>
-            <p style={{opacity: 0.8, marginTop: '0.5rem'}}>Доступ ко всем дням тарифа открывается сразу и целиком, навсегда — без потоков,
-              расписания и ожидания старта. Оплата — по договорённости в переписке, без формы на сайте.</p>
+            <p style={{opacity: 0.8, marginTop: '0.5rem'}}>Все дни курса уже открыты на сайте — читайте и пробуйте задания бесплатно, без
+              регистрации. Оплата — это не технический ключ, а то, что делает вас нашим учеником:
+              право написать нам с вопросом по материалам (ответ обычно в течение суток) и, в «Максимуме»,
+              банк промптов и материалы по работе с заказчиками. Оплата — по договорённости в переписке,
+              без формы на сайте.</p>
             <div className="ac-grid cols-3" style={{marginTop: '1.5rem', alignItems: 'stretch'}}>
               <div className="ac-card ac-price-card">
                 <h3>База</h3>
@@ -189,7 +192,7 @@ export default function Home() {
                 <ul className="ac-price-features">
                   <li>14 дней, 14 тестов самопроверки</li>
                   <li>Всё из «Базы» + терминал, база данных, ключи, отладка, кейс в портфолио</li>
-                  <li>Полный набор шаблонов, чек-листов и стартовая библиотека промптов</li>
+                  <li>Банк промптов на 60 запросов, каталог 7 типов проектов, чек-листы</li>
                   <li>Продвинутый трек (11 модулей) — в подарок</li>
                 </ul>
                 <Link className="button button--primary button--block" to={mailto('Полная', '35 000 ₽')}>Написать — 35 000 ₽</Link>
@@ -201,8 +204,8 @@ export default function Home() {
                 <ul className="ac-price-features">
                   <li>Всё из «Полной»</li>
                   <li>Каталог 7 типов проектов — как перенести процедуру на бота, автоматизацию и другое</li>
-                  <li>Дополнительные разборы и приоритетная почтовая поддержка</li>
-                  <li>Расширенные критерии приёмки для нестандартных проектов</li>
+                  <li>Банк промптов «Работа с заказчиками» (+20, 80 всего): оценка заказа, переговоры, сдача проекта</li>
+                  <li>Приоритетный ответ на вопросы по материалам</li>
                 </ul>
                 <Link className="button button--outline button--block" to={mailto('Максимум', '50 000 ₽')}>Написать — 50 000 ₽</Link>
               </div>
@@ -210,6 +213,36 @@ export default function Home() {
             <p style={{textAlign: 'center', marginTop: '1.5rem', fontSize: '0.85rem', opacity: 0.7}}>
               Кнопка откроет письмо в вашей почтовой программе — если она не настроена, напишите
               нам напрямую на {CONTACT_EMAIL}.
+            </p>
+          </div>
+        </section>
+
+        <section className="ac-section">
+          <div className="container">
+            <span className="ac-eyebrow">Честно, до оплаты</span>
+            <h2>Что не входит и кому не подойдёт</h2>
+            <div className="ac-grid cols-2" style={{marginTop: '1.5rem'}}>
+              <div className="ac-card">
+                <h3 style={{fontSize: '1.05rem'}}>Чего в курсе нет</h3>
+                <ul style={{opacity: 0.85, paddingLeft: '1.1rem', margin: 0}}>
+                  <li>Персональной проверки вашего кода или разбора именно вашего проекта — проверка автоматическая, тестами и чек-листами самопроверки.</li>
+                  <li>Личных созвонов и наставника, который смотрит ваш экран.</li>
+                  <li>Доступа к ИИ-ассистенту — его нужно иметь до покупки.</li>
+                  <li>Гарантии дохода, заказов или трудоустройства.</li>
+                </ul>
+              </div>
+              <div className="ac-card">
+                <h3 style={{fontSize: '1.05rem'}}>Кому не подойдёт</h3>
+                <ul style={{opacity: 0.85, paddingLeft: '1.1rem', margin: 0}}>
+                  <li>Ищете способ заработать без вложения времени — нужно 2–3 часа в день.</li>
+                  <li>Хотите стать инженером и писать код руками — это другой курс.</li>
+                  <li>Нужен наставник, который правит ваши ошибки лично.</li>
+                  <li>Не готовы, что что-то будет ломаться — будет, и половина курса про то, как это чинить.</li>
+                </ul>
+              </div>
+            </div>
+            <p style={{marginTop: '1rem', opacity: 0.7, fontSize: '0.85rem'}}>
+              Полный список — в разделе 2–3 <Link to="/docs/legal/oferta">оферты (черновик)</Link>.
             </p>
           </div>
         </section>
