@@ -81,7 +81,7 @@ export default function Programma() {
             <h2>Как устроено обучение</h2>
             <p style={{opacity: 0.85, marginTop: '0.5rem'}}>Понадобится свой аккаунт Claude.ai — бесплатного плана достаточно для старта, что докупать по мере курса, подскажем на месте.</p>
             <div className="ac-grid cols-4" style={{marginTop: '1.5rem'}}>
-              <div className="ac-card"><span className="ac-eyebrow">Структура занятия</span><p>короткая теория → живая демонстрация → практика с преподавателем → домашний проект. Живые занятия проходят онлайн (в Zoom), ссылку присылаем перед стартом.</p></div>
+              <div className="ac-card"><span className="ac-eyebrow">Структура занятия</span><p>короткая теория → живая демонстрация → практика → домашний проект. Живые занятия проходят онлайн (в Zoom), ссылку присылаем перед стартом.</p></div>
               <div className="ac-card"><span className="ac-eyebrow">Домашние проекты</span><p>каждый мини-проект попадает в портфолио студента, а не остаётся черновиком</p></div>
               <div className="ac-card"><span className="ac-eyebrow">Итоговая аттестация</span><p>короткая неформальная демонстрация портфолио из мини-проектов группе — это не экзамен</p></div>
               <div className="ac-card"><span className="ac-eyebrow">Доступ к модулям</span><p>зависит от выбранного потока — Старт, Практик или Инженер</p></div>

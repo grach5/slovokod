@@ -169,8 +169,7 @@ export default function Home() {
             <span className="ac-eyebrow">Тарифы набора</span>
             <h2>Выберите свой поток</h2>
             <p style={{opacity: 0.8, marginTop: '0.5rem'}}>Доступ к материалам остаётся у вас навсегда — оплата целиком или в рассрочку
-              (для «Практика» и «Инженера»). Формат — живые занятия с преподавателем плюс
-              материалы в записи.</p>
+              (для «Практика» и «Инженера»). Формат — живые занятия плюс материалы в записи.</p>
             <div className="ac-grid cols-3" style={{marginTop: '1.5rem', alignItems: 'stretch'}}>
               <div className="ac-card ac-price-card">
                 <h3>Старт</h3>
