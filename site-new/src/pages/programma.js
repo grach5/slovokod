@@ -114,6 +114,10 @@ export default function Programma() {
               <div className="ac-card"><span className="ac-eyebrow">Самопроверка</span><p>10 вопросов после каждого дня — это чек-лист понимания, не экзамен, доступ к следующему дню он не блокирует</p></div>
               <div className="ac-card"><span className="ac-eyebrow">Итог</span><p>к концу «Полной» — опубликованный продукт с базой данных и оформленный кейс в портфолио</p></div>
             </div>
+            <p style={{marginTop: '1rem', fontSize: '0.85rem', opacity: 0.7}}>
+              Незнакомые слова на этой странице («терминал», «репозиторий», MCP и т.п.) объясняются
+              в <Link to="/docs/resources/slovar">Словаре терминов</Link> — держите открытым в отдельной вкладке.
+            </p>
           </div>
         </section>
 

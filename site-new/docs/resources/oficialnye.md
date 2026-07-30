@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: Официальные материалы Anthropic
 ---
 
@@ -19,8 +19,7 @@ _Часть раздела [«Ресурсы»](./resursy)_
 строки, т.е. терминал) для разработки: issue-трекер (список задач и багов),
 документация, примеры.
 Первый источник правды для модулей [M1](/docs/modules/module-1-claude-code)
-(Практик/Инженер) и [M2](/docs/modules/module-2-avtomatizaciya-agenty)
-(Практик/Инженер).
+и [M2](/docs/modules/module-2-avtomatizaciya-agenty).
 
 ### [Claude Cookbooks](https://github.com/anthropics/claude-cookbooks)
 Официальный сборник рецептов по построению приложений на Claude: агенты, RAG
@@ -35,8 +34,8 @@ tool use, работа со Skills (навыками). Полезно на мо�
 Anthropic ведёт для них каталог (маркетплейс). Это не то же самое, что
 MCP-коннекторы из M8: Skills не требуют внешнего сервиса, это просто набор
 инструкций и скриптов. Хорошая отправная точка для модуля
-[M8 — Интеграции и экосистема](/docs/modules/module-8-integracii)
-(Практик/Инженер): прежде чем писать свою интеграцию с нуля, проверьте, нет ли
+[M8 — Интеграции и экосистема](/docs/modules/module-8-integracii):
+прежде чем писать свою интеграцию с нуля, проверьте, нет ли
 готового навыка.
 
 ### [Интерактивный туториал по промпт-инжинирингу](https://github.com/anthropics/prompt-eng-interactive-tutorial)

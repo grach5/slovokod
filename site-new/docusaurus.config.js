@@ -115,6 +115,7 @@ const config = {
               {label: 'Полная (14 дней)', to: '/docs/polnaya/den-1'},
               {label: 'Продвинутый трек', to: '/docs/modules/module-0-osnovy-promptinga'},
               {label: 'Ресурсы', to: '/docs/resources/resursy'},
+              {label: 'Словарь терминов', to: '/docs/resources/slovar'},
             ],
           },
           {

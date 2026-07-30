@@ -105,6 +105,10 @@ export default function Home() {
                 <p className="ac-track-stat">11 модулей · входит в тариф «Полная» и «Максимум»</p>
               </div>
             </div>
+            <p style={{marginTop: '1rem', fontSize: '0.85rem', opacity: 0.7}}>
+              Слова вроде «терминал» или «репозиторий» пугают только пока незнакомы — каждое
+              объясняется в курсе один раз, простыми словами, в <Link to="/docs/resources/slovar">Словаре терминов</Link>.
+            </p>
           </div>
         </section>
 
