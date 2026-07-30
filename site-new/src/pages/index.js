@@ -169,6 +169,18 @@ export default function Home() {
 
         <section className="ac-section">
           <div className="container">
+            <span className="ac-eyebrow">Отзывы</span>
+            <h2>Курс только запускается</h2>
+            <p style={{maxWidth: '62ch', opacity: 0.8, marginTop: '0.5rem'}}>
+              Отзывы появятся здесь после первых выпускников — мы не публикуем ничего,
+              что не написали реальные люди. Если до покупки есть вопрос — напишите через
+              чат в правом нижнем углу или на {CONTACT_EMAIL}, ответим лично.
+            </p>
+          </div>
+        </section>
+
+        <section className="ac-section">
+          <div className="container">
             <span className="ac-eyebrow">Тарифы</span>
             <Heading as="h2" id="pricing">Выберите свой трек</Heading>
             <p style={{opacity: 0.8, marginTop: '0.5rem'}}>Все дни курса уже открыты на сайте — читайте и пробуйте задания бесплатно, без
