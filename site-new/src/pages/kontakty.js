@@ -78,7 +78,7 @@ export default function Kontakty() {
             <p style={{opacity: 0.8}}>Достаточно пары строк с именем и выбранным тарифом (База / Полная / Максимум) —
               дальше обсудим оплату.</p>
             <div className="ac-cta-actions">
-              <a className="button button--primary button--lg" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Словокод — вопрос')}`}>Написать</a>
+              <a className="button button--primary button--lg" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Словокод — вопрос')}&body=${encodeURIComponent('Имя: \nИнтересует тариф: База / Полная / Максимум\nВопрос: ')}`}>Написать</a>
               <CopyEmailButton email={CONTACT_EMAIL} />
               <a className="button button--outline button--lg" href="/#pricing">Посмотреть тарифы</a>
             </div>
